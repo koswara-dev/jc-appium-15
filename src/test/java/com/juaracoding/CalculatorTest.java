@@ -57,6 +57,7 @@ public class CalculatorTest {
         equal.click();
         MobileElement result = (MobileElement) driver.findElement(By.id("com.google.android.calculator:id/result_final"));
         String txtResult = result.getText();
+        System.out.println(txtResult);
         Assert.assertEquals(txtResult, "−1");
     }
 
