@@ -44,11 +44,22 @@ public class CalculatorTest {
         Assert.assertEquals(txtResult, "3");
     }
 
-    // TODO: add testSubtract()
     @Test
     public void testSubtract(){
         // 3 - 4 = -1
-
+        MobileElement numThree = (MobileElement) driver.findElement(By.id("com.google.android.calculator:id/digit_3"));
+        numThree.click();
+        MobileElement btnSubtract = (MobileElement) driver.findElement(By.id("com.google.android.calculator:id/op_sub"));
+        btnSubtract.click();
+        MobileElement numFour = (MobileElement) driver.findElement(By.id("com.google.android.calculator:id/digit_4"));
+        numFour.click();
+        MobileElement equal = (MobileElement) driver.findElement(By.id("com.google.android.calculator:id/eq"));
+        equal.click();
+        MobileElement result = (MobileElement) driver.findElement(By.id("com.google.android.calculator:id/result_final"));
+        String txtResult = result.getText();
+        Assert.assertEquals(txtResult, "−1");
     }
+
+    // TODO: add testMultiply(), testDivide()
 
 }
